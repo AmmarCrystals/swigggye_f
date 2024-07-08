@@ -30,7 +30,6 @@
   display: flex;
   flex-wrap: wrap;
   gap: 27px;
-
   margin-left: calc(10% + 36px);
   margin-right: calc(10% + 36px);
 }

@@ -7,12 +7,11 @@ const Body = () => {
 
   useEffect(() => {
     bodyData();
-    console.log("render");
   }, []);
 
   async function bodyData() {
     const data1 = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.2812547&lng=73.0482912&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.61610&lng=73.72860&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
 
     const data2 = await data1.json();
@@ -21,12 +20,14 @@ const Body = () => {
     // const data3 = await data2.data?.cards[0]?.card?.card?.imageGridCards?.info; ............../// For Top
 
     setbodyCard(data3);
-    console.log(data3);
   }
 
   return (
     <>
-      <div className="filtter_buttons">
+    <div className="mt-5 mx-48">
+      <h1 className="font-bold text-2xl">Restaurants with online food delivery in Mumbai</h1>
+</div>    
+      <div className=" mt-6 filtter_buttons">
         <button className="btn">Filter</button>
         <button className="btn">Sort By</button>
         <button className="btn">Fast Delivery</button>
@@ -51,7 +52,7 @@ const Body = () => {
               />
               <div className="details">
                 <h2>
-                  <b>{x.info.name}</b>
+                  <b>{x.info.name.substring(0,12) + "..."}</b>
                 </h2>
                 <p className="star">
                   <span>

@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 const Crousel = () => {
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 6,
@@ -20,7 +20,7 @@ const Crousel = () => {
 
   async function crouselfetch() {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.61610&lng=73.72860&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.2812547&lng=73.0482912&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
 
     const one = await data.json();
@@ -28,11 +28,9 @@ const Crousel = () => {
       ?.info;
     setCrouselData(finaldata);
     console.log(finaldata);
-    // const finaldata = await one.data?.cards[0]?.card?.card?.imageGridCards
-    //   ?.info;
   }
   return (
-    <div className="mt-10 mx-48">
+    <div className="mt-6 mx-48">
       <h1 className="font-bold text-2xl">What's on your mind?</h1>
       <div className="slider-container">
         <Slider {...settings}>
