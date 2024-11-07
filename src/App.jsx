@@ -14,7 +14,7 @@ function App() {
       <Header />
       <hr />
       <Crousle />
-      <MidCrousel />
+      {/* <MidCrousel /> */}
       <Body />
       {/* <Ctest/> */}
       {/* <TopResto/>
